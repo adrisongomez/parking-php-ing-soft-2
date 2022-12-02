@@ -1,0 +1,27 @@
+version: '3.8'
+
+services:
+  database:
+    image: "mysql:8.0.31"
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: ${DATABASE_PASSWORD}
+      MYSQL_DATABASE: ${DATABASE_NAME}
+      MYSQL_USER: "${DATABASE_USER}"
+      MYSQL_TCP_PORT: ${DATABASE_PORT}
+    ports:
+    - 3307:3307
+    expose:
+    - 3307
+  
+  site:
+    build: "."
+    restart: always
+    ports:
+    - 80:80
+    environment:
+      DATABASE_PASSWORD: ${DATABASE_PASSWORD}
+      DATABASE_NAME: ${DATABASE_NAME}
+      DATABASE_USER: ${DATABASE_USER}
+      DATABASE_DOMAIN: "database"
+      DATABASE_PORT: ${DATABASE_PORT}

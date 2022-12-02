@@ -1,11 +1,13 @@
 <?php
 
-define('SERVIDOR','localhost');
-define('USUARIO','root');
-define('PASSWORD','');
-define('BD','parqueo');
 
-$servidor="mysql:dbname=".BD.";host=".SERVIDOR;
+define('SERVIDOR',$_ENV['DATABASE_DOMAIN']);
+define('USUARIO',$_['DATABASE_USER']);
+define('PASSWORD',$_ENV['DATABASE_PASSOWRD']);
+define('BD',$_ENV['DATABASE_NAME']);
+define('PORT', $_ENV['DATABASE_PORT']);
+
+$servidor="mysql:dbname=".BD.";host=".SERVIDOR.";port:".PORT;
 
 try{
     $pdo = new PDO($servidor,USUARIO,PASSWORD,array(PDO::MYSQL_ATTR_INIT_COMMAND=>"SET NAMES utf8"));
