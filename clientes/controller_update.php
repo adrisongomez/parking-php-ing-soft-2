@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: HILARIWEB
- * Date: 11/10/2022
- * Time: 08:15
- */
 include('../app/config.php');
 
 $nombre_cliente = $_GET['nombre_cliente'];

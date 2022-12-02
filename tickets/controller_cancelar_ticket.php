@@ -1,11 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: HILARIWEB
- * Date: 7/10/2022
- * Time: 13:06
- */
-
 include('../app/config.php');
 
 

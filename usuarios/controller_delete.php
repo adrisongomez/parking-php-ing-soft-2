@@ -1,11 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: HILARIWEB
- * Date: 5/9/2022
- * Time: 11:02
- */
-
 include('../app/config.php');
 
 $id_user = $_GET['id_user'];

@@ -1,11 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: HILARIWEB
- * Date: 28/9/2022
- * Time: 16:56
- */
-
 include('../app/config.php');
 
 $nombre_parqueo = $_GET['nombre_parqueo'];

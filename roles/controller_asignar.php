@@ -1,11 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: HILARIWEB
- * Date: 8/9/2022
- * Time: 17:58
- */
-
 include('../app/config.php');
 
 $nombre = $_POST['nombre'];

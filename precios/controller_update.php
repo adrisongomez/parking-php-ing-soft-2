@@ -1,11 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: HILARIWEB
- * Date: 21/10/2022
- * Time: 07:37
- */
-
 include('../app/config.php');
 
 $cantidad = $_GET['cantidad'];

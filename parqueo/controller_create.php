@@ -1,11 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: HILARIWEB
- * Date: 13/9/2022
- * Time: 09:55
- */
-
 include('../app/config.php');
 
 $nro_espacio = $_GET['nro_espacio'];

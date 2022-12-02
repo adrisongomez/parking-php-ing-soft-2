@@ -45,7 +45,7 @@ $contador_del_nro_de_factura = $contador_del_nro_de_factura +1;
             <br>
             <div class="container">
 
-                <h2>Bienvenido al SISTEMA DE PARQUEO - HILARIWEB</h2>
+                <h2>Bienvenido al SISTEMA DE PARQUEO - UASD Parking</h2>
 
                 <br>
                 <div class="row">

@@ -1,12 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: HILARIWEB
- * Date: 3/10/2022
- * Time: 11:55
- */
-
-
 include('../app/config.php');
 
 $placa = $_GET['placa'];
