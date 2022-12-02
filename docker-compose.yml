@@ -5,14 +5,16 @@ services:
     image: "mysql:8.0.31"
     restart: always
     environment:
-      MYSQL_ROOT_PASSWORD: ${DATABASE_PASSWORD}
+      MYSQL_ROOT_PASSWORD: ${DATABASE_USERPASSWORD}
       MYSQL_DATABASE: ${DATABASE_NAME}
-      MYSQL_USER: "${DATABASE_USER}"
+      MYSQL_USER: ${DATABASE_USERNAME}
       MYSQL_TCP_PORT: ${DATABASE_PORT}
     ports:
     - 3307:3307
     expose:
     - 3307
+    volumes:
+      - ./bd_tables/1.sql:/docker-entrypoint-initdb.d/1.sql
   
   site:
     build: "."
@@ -20,8 +22,13 @@ services:
     ports:
     - 80:80
     environment:
-      DATABASE_PASSWORD: ${DATABASE_PASSWORD}
+      DATABASE_USER: ${DATABASE_USERNAME}
+      DATABASE_PASSWORD: ${DATABASE_USERPASSWORD}
       DATABASE_NAME: ${DATABASE_NAME}
-      DATABASE_USER: ${DATABASE_USER}
       DATABASE_DOMAIN: "database"
       DATABASE_PORT: ${DATABASE_PORT}
+    volumes:
+    - type: bind
+      source: ./
+      target: /var/wwww/html/
+
