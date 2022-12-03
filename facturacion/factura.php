@@ -141,13 +141,13 @@ $html = '
          </tr>
          <tr>
             <td>'.$detalle.'</td>
-            <td style="text-align: center">Bs. '.$precio.'</td>
+            <td style="text-align: center">DOP$. '.$precio.'</td>
             <td style="text-align: center">'.$cantidad.'</td>
-            <td style="text-align: center">Bs. '.$total.'</td>
+            <td style="text-align: center">DOP$. '.$total.'</td>
          </tr>
          </table>
          <p style="text-align: right">
-         <b>Monto Total: </b> Bs. '.$monto_total.'
+         <b>Monto Total: </b> DOP$. '.$monto_total.'
         </p>
         <p>
             <b>Son: </b>'.$monto_literal.'
