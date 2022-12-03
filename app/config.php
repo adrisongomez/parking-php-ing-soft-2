@@ -19,7 +19,7 @@ try {
 }
 
 
-$URL = 'http://localhost/';
+$URL = getenv("DOMAIN");
 
 $estado_del_registro = "1";
 
