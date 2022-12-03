@@ -1,4 +1,4 @@
---- SEED DATA
+USE parqueo;
 INSERT INTO
     tb_informaciones (
         nombre_parqueo,
@@ -9,8 +9,8 @@ INSERT INTO
         telefono,
         departamento_ciudad,
         pais
-    ) VALUE (
-        'UASD Parking',
+    ) VALUES (
+        "UASD Parking",
         "Gestion de parqueo",
         "Recinto Santiago",
         "Avenida Olimplica",
@@ -21,7 +21,7 @@ INSERT INTO
     );
 
 INSERT INTO
-    tb_roles (nombres, estado)
+    tb_roles (nombre, estado)
 VALUES
     ("Cajero", "1");
 
@@ -45,31 +45,31 @@ VALUES
     );
 
 INSERT INTO
-    tb_mapeos (nro_espacio, obs, estado) VALUE ("1", "1", "1");
+    tb_mapeos (nro_espacio, estado, obs) VALUES ("1", "1", "1");
 
 INSERT INTO
-    tb_mapeos (nro_espacio, obs, estado) VALUE ("2", "1", "2");
+    tb_mapeos (nro_espacio, estado, obs) VALUES ("2", "1", "2");
 
 INSERT INTO
-    tb_mapeos (nro_espacio, obs, estado) VALUE ("3", "1", "3");
+    tb_mapeos (nro_espacio, estado, obs) VALUES ("3", "1", "3");
 
 INSERT INTO
-    tb_mapeos (nro_espacio, obs, estado) VALUE ("4", "1", "4");
+    tb_mapeos (nro_espacio, estado, obs) VALUES ("4", "1", "4");
 
 INSERT INTO
-    tb_mapeos (nro_espacio, obs, estado) VALUE ("5", "1", "5");
+    tb_mapeos (nro_espacio, estado, obs) VALUES ("5", "1", "5");
 
 INSERT INTO
-    tb_mapeos (nro_espacio, obs, estado) VALUE ("6", "1", "6");
+    tb_mapeos (nro_espacio, estado, obs) VALUES ("6", "1", "6");
 
 INSERT INTO
-    tb_mapeos (nro_espacio, obs, estado) VALUE ("7", "1", "7");
+    tb_mapeos (nro_espacio, estado, obs) VALUES ("7", "1", "7");
 
 INSERT INTO
-    tb_mapeos (nro_espacio, obs, estado) VALUE ("8", "1", "8");
+    tb_mapeos (nro_espacio, estado, obs) VALUES ("8", "1", "8");
 
 INSERT INTO
-    tb_mapeos (nro_espacio, obs, estado) VALUE ("9", "1", "9");
+    tb_mapeos (nro_espacio, estado, obs) VALUES ("9", "1", "9");
 
 INSERT INTO
-    tb_mapeos (nro_espacio, obs, estado) VALUE ("10", "1", "10");
+    tb_mapeos (nro_espacio, estado, obs) VALUES ("10", "1", "10");

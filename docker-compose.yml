@@ -1,34 +1,37 @@
 version: '3.8'
 
 services:
-  database:
-    image: "mysql:8.0.31"
-    restart: always
-    environment:
-      MYSQL_ROOT_PASSWORD: ${DATABASE_USERPASSWORD}
-      MYSQL_DATABASE: ${DATABASE_NAME}
-      MYSQL_USER: ${DATABASE_USERNAME}
-      MYSQL_TCP_PORT: ${DATABASE_PORT}
-    ports:
-    - 3307:3307
-    expose:
-    - 3307
-    volumes:
-      - ./bd_tables/1.sql:/docker-entrypoint-initdb.d/1.sql
-  
   site:
     build: "."
     restart: always
     ports:
     - 80:80
     environment:
-      DATABASE_USER: ${DATABASE_USERNAME}
-      DATABASE_PASSWORD: ${DATABASE_USERPASSWORD}
+      DATABASE_USER: ${DB_USER}
+      DATABASE_PASSWORD: ${DB_PASSWORD}
       DATABASE_NAME: ${DATABASE_NAME}
-      DATABASE_DOMAIN: "database"
       DATABASE_PORT: ${DATABASE_PORT}
+      DATABASE_DOMAIN: "mydb"
+    depends_on:
+      - mydb
     volumes:
-    - type: bind
-      source: ./
-      target: /var/wwww/html/
+    - ./:/var/www/html/
+  mydb:
+    image: "mysql:8.0.31"
+    restart: always
+    command: --default-authentication-plugin=mysql_native_password
+    environment:
+      MYSQL_ROOT_PASSWORD: ${DB_PASSWORD}
+      MYSQL_DATABASE: ${DATABASE_NAME}
+      MYSQL_USER: ${DB_USER}
+      MYSQL_PASSWORD: ${DB_PASSWORD}
+      MYSQL_TCP_PORT: ${DATABASE_PORT}
+    ports:
+    - 3306:3306
+    expose:
+    - 3306
+    volumes:
+      - ./bd_tables/1.sql:/docker-entrypoint-initdb.d/1.sql
+      - ./bd_tables/2.sql:/docker-entrypoint-initdb.d/2.sql
+  
 
